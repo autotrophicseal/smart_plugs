@@ -2,24 +2,27 @@ import time
 import sys
 import RPi.GPIO as GPIO
 
-a_on = '1111111111111010101011101'
-a_off = '1111111111111010101010111'
-b_on = '1111111111101110101011101'
-b_off = '1111111111101110101010111'
-c_on = '1111111111101011101011101'
-c_off = '1111111111101011101010111'
-d_on = '1111111111101010111011101'
-d_off = '1111111111101010111010111'
-short_delay = 0.00045
-long_delay = 0.00090
-extended_delay = 0.0096
+one_on =  '001010000111011101100001000000101'
+one_off = '001010000111011101011110111111111'
+two_on =  '001010000111011101101101000011101'
+two_off = '001010000111011101010010111100111'
+three_on =  '001010000111011101100101000001101'
+three_off = '001010000111011101011010111110111'
+four_on =  '001010000111011101100011000001001'
+four_off = '001010000111011101011100111111011'
+five_on =  '001010000111011101101011000011001'
+five_off = '001010000111011101010100111101011'
+
+long_delay = 0.000937
+short_delay = 0.000319
+extended_delay = 0.00443
 
 NUM_ATTEMPTS = 10
 TRANSMIT_PIN = 23
 
 def transmit_code(code):
     '''Transmit a chosen code string using the GPIO transmitter'''
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
     GPIO.setup(TRANSMIT_PIN, GPIO.OUT)
     for t in range(NUM_ATTEMPTS):
         for i in code:
@@ -40,6 +43,6 @@ def transmit_code(code):
     GPIO.cleanup()
 
 if __name__ == '__main__':
-    for argument in sys.argv[1:]:
-        exec('transmit_code(' + str(argument) + ')')
-
+    #for argument in sys.argv[1:]:
+        #exec('transmit_code(' + str(argument) + ')')
+    transmit_code(three_on)
