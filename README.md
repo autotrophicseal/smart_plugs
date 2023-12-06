@@ -45,10 +45,20 @@ Got some good plots. Data is as follows for mine:
 - 5 ON:  001010000111011101101011000011001
 - 5 OFF: 001010000111011101010100111101011
 
+Also got timing information. Stored separatelyl
+
 I suppose you can drive past my house and mess with the christmas lights now. Congrats!
 
 ## Sending Codes
 
+Modified the Transmit RF file to send the data I just captured. Had to tweak the timing for some of the delay's and activations but it was worth it because it works now.
+
+## Scheduling
+
+Utilized pythons Scheduling package to time the turning on and off of the plugs. Ran run_lights.py via ssh with nohup (i think) to ensure program continued to run despite killing of ssh terminal.
+
+
+Seems to have worked so far!
 
 
 

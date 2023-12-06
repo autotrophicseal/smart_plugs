@@ -25,6 +25,7 @@ args = parser.parse_args()
 
 signal.signal(signal.SIGINT, exithandler)
 rfdevice = RFDevice(args.gpio)
+#rfdevice = RFDevice(pin=args.gpio)
 rfdevice.enable_rx()
 timestamp = None
 logging.info("Listening for codes on GPIO " + str(args.gpio))

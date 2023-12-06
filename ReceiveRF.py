@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 
 RECEIVED_SIGNAL = [[], []]  #[[time of reading], [signal reading]]
 MAX_DURATION = 5
-RECEIVE_PIN = 23
+RECEIVE_PIN = 7
 
 if __name__ == '__main__':
     GPIO.setmode(GPIO.BOARD)

@@ -13,12 +13,14 @@ four_off = '001010000111011101011100111111011'
 five_on =  '001010000111011101101011000011001'
 five_off = '001010000111011101010100111101011'
 
-long_delay = 0.000937
-short_delay = 0.000319
+long_delay = 0.000885
+short_delay = 0.000289
+long_activate = 0.000913
+short_activate = 0.000309
 extended_delay = 0.00443
 
 NUM_ATTEMPTS = 10
-TRANSMIT_PIN = 23
+TRANSMIT_PIN = 13
 
 def transmit_code(code):
     '''Transmit a chosen code string using the GPIO transmitter'''
@@ -28,12 +30,12 @@ def transmit_code(code):
         for i in code:
             if i == '1':
                 GPIO.output(TRANSMIT_PIN, 1)
-                time.sleep(short_delay)
+                time.sleep(short_activate)
                 GPIO.output(TRANSMIT_PIN, 0)
                 time.sleep(long_delay)
             elif i == '0':
                 GPIO.output(TRANSMIT_PIN, 1)
-                time.sleep(long_delay)
+                time.sleep(long_activate)
                 GPIO.output(TRANSMIT_PIN, 0)
                 time.sleep(short_delay)
             else:
@@ -45,4 +47,4 @@ def transmit_code(code):
 if __name__ == '__main__':
     #for argument in sys.argv[1:]:
         #exec('transmit_code(' + str(argument) + ')')
-    transmit_code(three_on)
+    transmit_code(four_off)

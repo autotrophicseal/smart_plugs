@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/pi/Desktop/smart_plugs/run_lights.py", line 39, in <module>
+    time.sleep(1)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/pi/Desktop/smart_plugs/run_lights.py", line 1, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/smart_plugs/run_lights.py", line 1, in <module>
+    import schedule
+ModuleNotFoundError: No module named 'schedule'
